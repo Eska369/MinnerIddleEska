@@ -92,7 +92,7 @@ public class LetMeSee : MonoBehaviour
         //Player.Prefs.DeleteAll();
 
         //PLACE FOR LOAD
-        currentDollars = PlayerPrefs.GetFloat("currentDollars");
+        currentDollars = PlayerPrefs.GetFloat("currentDollars", currentDollars);
     }
 
     
