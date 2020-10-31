@@ -11,6 +11,7 @@ public class economy : MonoBehaviour
     public float currentScore;
     public float hitPower;
     public float scoreIncreasedPerSecond;
+    public float scoreIncreasedPerSecond2;
     public float x;
 
     //SHOP
@@ -60,17 +61,28 @@ public class economy : MonoBehaviour
     {
         //CLICKER
         currentScore = 0;
-        hitPower = 1;
-        scoreIncreasedPerSecond = 1;
+        hitPower = 0.000072f;
+        scoreIncreasedPerSecond = 0;
+        scoreIncreasedPerSecond2 = 0;
         x = 0f;
 
         //WE MUST SET  ALL DEFAULT VARIABLES BEFORE LOAD
         shop1prize = 25;
-        shop2prize = 125;
+        shop2prize = 50;
+        shop3prize = 75;
+        shop4prize = 100;
+        shop5prize = 125;
+
         amount1 = 0;
         amount1Profit = 1;
         amount2 = 0;
         amount2Profit = 5;
+        amount3 = 0;
+        amount3Profit = 1;
+        amount4 = 0;
+        amount4Profit = 1;
+        amount5 = 0;
+        amount5Profit = 1;
 
         //RESET LINE
 
