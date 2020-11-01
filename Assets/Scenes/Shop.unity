@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 129355682}
   - component: {fileID: 129355681}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -780,7 +780,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 455877760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208630742}
+        m_MethodName: Shop3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &455877760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +841,7 @@ GameObject:
   - component: {fileID: 497733306}
   - component: {fileID: 497733305}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Cost: '
 --- !u!222 &497733306
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -908,7 +919,7 @@ GameObject:
   - component: {fileID: 622983189}
   - component: {fileID: 622983188}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,7 +957,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Cost: '
 --- !u!222 &622983189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1139,7 +1150,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 828630830}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208630742}
+        m_MethodName: Shop4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &828630830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1289,7 @@ GameObject:
   - component: {fileID: 1197664507}
   - component: {fileID: 1197664506}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,7 +1327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Cost: '
 --- !u!222 &1197664507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1415,7 +1437,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1315183521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208630742}
+        m_MethodName: Shop5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1315183521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1646,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1401695381}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208630742}
+        m_MethodName: Shop1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1401695381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,7 +1707,7 @@ GameObject:
   - component: {fileID: 1423719763}
   - component: {fileID: 1423719762}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Amount3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1785,7 @@ GameObject:
   - component: {fileID: 1439937441}
   - component: {fileID: 1439937440}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Amount1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,7 +1944,7 @@ GameObject:
   - component: {fileID: 1482276844}
   - component: {fileID: 1482276843}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Amount2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1978,7 +2022,7 @@ GameObject:
   - component: {fileID: 1944781956}
   - component: {fileID: 1944781955}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Amount5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2056,7 +2100,7 @@ GameObject:
   - component: {fileID: 1993651830}
   - component: {fileID: 1993651829}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2094,7 +2138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Cost: '
 --- !u!222 &1993651830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2278,7 +2322,7 @@ GameObject:
   - component: {fileID: 2094860782}
   - component: {fileID: 2094860781}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Amount4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2426,7 +2470,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2133909157}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208630742}
+        m_MethodName: Shop2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2133909157
 MonoBehaviour:
   m_ObjectHideFlags: 0
