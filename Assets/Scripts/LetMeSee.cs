@@ -62,6 +62,7 @@ public class LetMeSee : MonoBehaviour
     public int upgradePrize;
     public Text upgradeText;
 
+
     void Start()
     {
         //CLICKER
@@ -79,28 +80,32 @@ public class LetMeSee : MonoBehaviour
         amount1 = 0;
         amount1Profit = 0.000072f;
         amount2 = 0;
-        amount2Profit = 0.000072f;
+        amount2Profit = 0.000144f;
         amount3 = 0;
-        amount3Profit = 0.000072f;
+        amount3Profit = 0.000216f;
         amount4 = 0;
-        amount4Profit = 0.000072f;
+        amount4Profit = 0.000288f;
         amount5 = 0;
-        amount5Profit = 0.000072f;
+        amount5Profit = 0.000360f;
 
         //PLACE FOR RESET LINE
 
-        //Player.Prefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         //PLACE FOR LOAD
-        currentDollars = PlayerPrefs.GetFloat("currentDollars", currentDollars);
+
+
+        StartCoroutine(loop());
+        
+
     }
 
     
     void Update()
     {
         //CLICKER
-        DollarsText.text = (int)currentDollars + "$";
-        BitcoinText.text = (int)currentBitcoins + "₿";
+        DollarsText.text = (float)currentDollars + "$";
+        BitcoinText.text = (float)currentBitcoins + "₿";
 
         DollarsIncreasedPerSecond = x * Time.deltaTime;
         BitcoinIncreasedPerSecond = x * Time.deltaTime;
@@ -116,17 +121,23 @@ public class LetMeSee : MonoBehaviour
         shop5text.text = "Tier 5: " + shop5prize + "$";
 
         //AMOUNT
-        amount1Text.text = "Tier 1: " + amount1 + "arts ₿: " + amount1Profit + "/s";
-        amount2Text.text = "Tier 2: " + amount2 + "arts ₿: " + amount2Profit + "/s";
-        amount3Text.text = "Tier 3: " + amount3 + "arts ₿: " + amount3Profit + "/s";
-        amount4Text.text = "Tier 4: " + amount4 + "arts ₿: " + amount4Profit + "/s";
-        amount5Text.text = "Tier 5: " + amount5 + "arts ₿: " + amount5Profit + "/s";
+        amount1Text.text = amount1 + " makes " + amount1Profit + "₿/s";
+        amount2Text.text = amount2 + " makes " + amount2Profit + "₿/s";
+        amount3Text.text = amount3 + " makes " + amount3Profit + "₿/s";
+        amount4Text.text = amount4 + " makes " + amount4Profit + "₿/s";
+        amount5Text.text = amount5 + " makes " + amount5Profit + "₿/s";
 
         //UPGRADE
         upgradeText.text = "Cost: " + upgradePrize + " $";
 
+        //BTCPERSEC
+
+
+
         //SAVE HERE
-        PlayerPrefs.SetFloat("currentDollars", (float)currentDollars);
+        
+
+        
     }
 
     public void Hit()
@@ -140,7 +151,7 @@ public class LetMeSee : MonoBehaviour
         {
             currentDollars -= shop1prize;
             amount1 += 1;
-            amount1Profit += 25;
+            amount1Profit += 0.000072f;
             shop1prize += 100;
         }
     }
@@ -151,7 +162,7 @@ public class LetMeSee : MonoBehaviour
         {
             currentDollars -= shop2prize;
             amount2 += 1;
-            amount2Profit += 50;
+            amount2Profit += 0.000144f;
             shop2prize += 100;
         }
     }
@@ -162,7 +173,7 @@ public class LetMeSee : MonoBehaviour
         {
             currentDollars -= shop3prize;
             amount3 += 1;
-            amount3Profit += 75;
+            amount3Profit += 0.000216f;
             shop3prize += 100;
         }
     }
@@ -173,7 +184,7 @@ public class LetMeSee : MonoBehaviour
         {
             currentDollars -= shop4prize;
             amount4 += 1;
-            amount4Profit += 100;
+            amount4Profit += 0.000288f;
             shop4prize += 100;
         }
     }
@@ -184,7 +195,7 @@ public class LetMeSee : MonoBehaviour
         {
             currentDollars -= shop5prize;
             amount5 += 1;
-            amount5Profit += 25;
+            amount5Profit += 0.000360f;
             shop5prize += 100;
         }
     }
@@ -194,8 +205,19 @@ public class LetMeSee : MonoBehaviour
         if(currentDollars >= upgradePrize)
         {
             currentDollars -= upgradePrize;
-            hitPower *= 2;
-            upgradePrize *= 3;
+            hitPower += 2;
+            upgradePrize *= 5;
         }
+    }
+
+    private IEnumerator loop()
+    {
+        while (true)
+        {
+            BitcoinsPerSec = (amount1Profit*amount1) + (amount2Profit * amount2) + (amount3Profit * amount3) + (amount4Profit * amount4) + (amount5Profit * amount5);
+            currentBitcoins += BitcoinsPerSec;
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
     }
 }
