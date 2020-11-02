@@ -10,6 +10,8 @@ public class LetMeSee : MonoBehaviour
     //CLICKER
     public Text DollarsText;
     public Text BitcoinText;
+    public Text BTCPerSec;
+    public float BTCEx = 0.000072f;
     public float currentDollars;
     public float DollarsPerSec;
     public float DollarsIncreasedPerSecond;
@@ -57,10 +59,22 @@ public class LetMeSee : MonoBehaviour
     public int amount5;
     public float amount5Profit;
 
+    public float am1 = 0.000072f;
+    public float am2 = 0.000144f;
+    public float am3 = 0.000216f;
+    public float am4 = 0.000288f;
+    public float am5 = 0.000360f;
+
 
     //UPGRADE HIT BUTTON
     public int upgradePrize;
     public Text upgradeText;
+
+    //LEVELING
+    public int level;
+    public int EXP;
+    public int expToNextLevel;
+    public Text levelText;
 
 
     void Start()
@@ -69,6 +83,7 @@ public class LetMeSee : MonoBehaviour
         currentDollars = 0;
         currentBitcoins = 0;
         hitPower = 1;
+        upgradePrize = 50;
 
         //SHOP ITEMS START PRIZE AND AMOUNT
         shop1prize = 25;
@@ -78,15 +93,19 @@ public class LetMeSee : MonoBehaviour
         shop5prize = 125;
 
         amount1 = 0;
-        amount1Profit = 0.000072f;
+        amount1Profit = 0.0000072f;
         amount2 = 0;
-        amount2Profit = 0.000144f;
+        amount2Profit = 0.0000144f;
         amount3 = 0;
-        amount3Profit = 0.000216f;
+        amount3Profit = 0.0000216f;
         amount4 = 0;
-        amount4Profit = 0.000288f;
+        amount4Profit = 0.0000288f;
         amount5 = 0;
-        amount5Profit = 0.000360f;
+        amount5Profit = 0.0000360f;
+
+        //LEVEL
+        level = 1;
+        expToNextLevel = 1;
 
         //PLACE FOR RESET LINE
 
@@ -131,18 +150,37 @@ public class LetMeSee : MonoBehaviour
         upgradeText.text = "Cost: " + upgradePrize + " $";
 
         //BTCPERSEC
+        BTCPerSec.text = (float)BitcoinsPerSec + "₿/s";
 
-
+        //LEVELING
+        if (EXP >= expToNextLevel)
+        {
+            level++;
+            EXP = 0;
+            expToNextLevel *= 2;
+        }
+        levelText.text = level + "Level!";
 
         //SAVE HERE
-        
 
-        
+
+
+    }
+
+    public void SellBTC()
+    {
+        if (currentBitcoins > 0)
+        {
+            currentDollars += currentBitcoins / BTCEx;
+            currentDollars = Mathf.Round(currentDollars * 100f) / 100f;
+            currentBitcoins = 0;
+        }
     }
 
     public void Hit()
     {
         currentDollars += hitPower;
+        EXP++;
     }
 
     public void Shop1()
@@ -214,7 +252,7 @@ public class LetMeSee : MonoBehaviour
     {
         while (true)
         {
-            BitcoinsPerSec = (amount1Profit*amount1) + (amount2Profit * amount2) + (amount3Profit * amount3) + (amount4Profit * amount4) + (amount5Profit * amount5);
+            BitcoinsPerSec = (amount1*am1) + (amount2*am2) + (amount3*am3) + (amount4*am4) + (amount5*am5);
             currentBitcoins += BitcoinsPerSec;
             yield return new WaitForSeconds(1f);
         }
