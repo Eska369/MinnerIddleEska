@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -75,6 +76,21 @@ public class LetMeSee : MonoBehaviour
     public int EXP;
     public int expToNextLevel;
     public Text levelText;
+
+    //ACHIEVEMENT
+    public bool Achi1;
+    public bool Achi2;
+    public bool Achi3;
+    public bool Achi4;
+    public bool Achi5;
+    public bool Achi6;
+
+    public Image Ach1;
+    public Image Ach2;
+    public Image Ach3;
+    public Image Ach4;
+    public Image Ach5;
+    public Image Ach6;
 
 
     void Start()
@@ -163,6 +179,12 @@ public class LetMeSee : MonoBehaviour
 
         //SAVE HERE
 
+        Achievement1();
+        Achievement2();
+        Achievement3();
+        Achievement4();
+        Achievement5();
+        Achievement6();
 
 
     }
@@ -258,4 +280,109 @@ public class LetMeSee : MonoBehaviour
         }
         yield return null;
     }
+
+
+    public void Achievement1()
+    {
+        if(currentDollars >= 30f)
+        {
+            Achi1 = true;
+        }
+
+        if(Achi1 == true)
+        {
+            Ach1.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach1.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Achievement2()
+    {
+        if (amount1 >= 3f)
+        {
+            Achi2 = true;
+        }
+
+        if (Achi2 == true)
+        {
+            Ach2.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach2.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Achievement3()
+    {
+        if (level >= 10)
+        {
+            Achi3 = true;
+        }
+
+        if (Achi3 == true)
+        {
+            Ach3.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach3.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Achievement4()
+    {
+        if (amount5 >= 10)
+        {
+            Achi4 = true;
+        }
+
+        if (Achi4 == true)
+        {
+            Ach4.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach4.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Achievement5()
+    {
+        if (currentDollars >= 1000f)
+        {
+            Achi5 = true;
+        }
+
+        if (Achi5 == true)
+        {
+            Ach5.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach5.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Achievement6()
+    {
+        if (currentBitcoins >= 1f)
+        {
+            Achi6 = true;
+        }
+
+        if (Achi6 == true)
+        {
+            Ach6.color = new Color(0.2f, 0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Ach6.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+
 }
