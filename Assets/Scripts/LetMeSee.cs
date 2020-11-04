@@ -128,11 +128,26 @@ public class LetMeSee : MonoBehaviour
         //PlayerPrefs.DeleteAll();
 
         //PLACE FOR LOAD
+        currentDollars = PlayerPrefs.GetFloat("currentDollars", currentDollars);
+        currentBitcoins = PlayerPrefs.GetFloat("currentBitcoins", currentBitcoins);
+        DollarsPerSec = PlayerPrefs.GetFloat("DollarsPerSec", DollarsPerSec);
+        DollarsIncreasedPerSecond = PlayerPrefs.GetFloat("DollarsIncreasedPerSecond", DollarsIncreasedPerSecond);
+        BitcoinsPerSec = PlayerPrefs.GetFloat("BitcoinsPerSecond", BitcoinsPerSec);
+        BitcoinIncreasedPerSecond = PlayerPrefs.GetFloat("BitcoinIncreasedPerSecond", BitcoinIncreasedPerSecond);
+        hitPower = PlayerPrefs.GetFloat("hitPower", hitPower);
 
+        amount1 = PlayerPrefs.GetInt("amount1", amount1);
+        amount2 = PlayerPrefs.GetInt("amount2", amount2);
+        amount3 = PlayerPrefs.GetInt("amount3", amount3);
+        amount4 = PlayerPrefs.GetInt("amount4", amount4);
+        amount5 = PlayerPrefs.GetInt("amount5", amount5);
 
-        StartCoroutine(loop());
-        
+        level = PlayerPrefs.GetInt("level", level);
+        EXP = PlayerPrefs.GetInt("EXP", EXP);
+        expToNextLevel = PlayerPrefs.GetInt("expToNextLevel", expToNextLevel);
 
+        //BTC LOOP 
+        StartCoroutine(Loop());
     }
 
     
@@ -145,8 +160,8 @@ public class LetMeSee : MonoBehaviour
         DollarsIncreasedPerSecond = x * Time.deltaTime;
         BitcoinIncreasedPerSecond = x * Time.deltaTime;
 
-        currentDollars = currentDollars + DollarsIncreasedPerSecond;
-        currentBitcoins = currentBitcoins + BitcoinIncreasedPerSecond;
+        currentDollars += DollarsIncreasedPerSecond;
+        currentBitcoins += BitcoinIncreasedPerSecond;
 
         //SHOP
         shop1text.text = "Tier 1: " + shop1prize + "$";
@@ -178,7 +193,29 @@ public class LetMeSee : MonoBehaviour
         levelText.text = level + "Level!";
 
         //SAVE HERE
+        PlayerPrefs.SetFloat("currentDollars", (float)currentDollars);
+        PlayerPrefs.SetFloat("currentBitcoins", (float)currentBitcoins);
+        PlayerPrefs.SetFloat("DollarsPerSec", (float)DollarsPerSec);
+        PlayerPrefs.SetFloat("DollarsIncreasedPerSecond", (float)DollarsIncreasedPerSecond);
+        PlayerPrefs.SetFloat("BitcoinsPerSec", (float)BitcoinsPerSec);
+        PlayerPrefs.SetFloat("BitcoinIncreasedPerSecond", (float)BitcoinIncreasedPerSecond);
+        PlayerPrefs.SetFloat("hitPower", (float)hitPower);
 
+        PlayerPrefs.SetFloat("amount1", (float)amount1);
+        PlayerPrefs.SetFloat("amount2", (float)amount2);
+        PlayerPrefs.SetFloat("amount3", (float)amount3);
+        PlayerPrefs.SetFloat("amount4", (float)amount4);
+        PlayerPrefs.SetFloat("amount5", (float)amount5);
+
+        PlayerPrefs.SetFloat("upgradePrize", (float)upgradePrize);
+
+        PlayerPrefs.SetInt("level", (int)level);
+        PlayerPrefs.SetInt("EXP", (int)level);
+        PlayerPrefs.SetInt("expToNextLevel", (int)expToNextLevel);
+
+        //DODAC ZAPIS ACHIEVMENTSOW
+
+        //ACHIEVEMENTS
         Achievement1();
         Achievement2();
         Achievement3();
@@ -270,7 +307,7 @@ public class LetMeSee : MonoBehaviour
         }
     }
 
-    private IEnumerator loop()
+    private IEnumerator Loop()
     {
         while (true)
         {
@@ -383,6 +420,4 @@ public class LetMeSee : MonoBehaviour
             Ach6.color = new Color(1f, 1f, 1f, 1f);
         }
     }
-
-
 }
