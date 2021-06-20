@@ -1,11 +1,12 @@
 Game is about clicking the Dollar sign. For gained money you can buy some GPUs to get your Bitcoin and make fortune!
 
 Features:
-	- Upgrading your GPUs to have more BTC/s
-	- Self-planned economy system
-	- Achievements
-	- Retro graphic design
-	- Leveling system
+
+- Upgrading your GPUs to have more BTC/s
+- Self-planned economy system
+- Achievements
+- Retro graphic design
+- Leveling system
 - The strongest pre-released RDNA 2
 
 
